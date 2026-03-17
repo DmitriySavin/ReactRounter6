@@ -19,7 +19,7 @@ export const About = () => {
           <Link to="mission">Info about company mission</Link>
         </li>
         <li>
-           <Link to="team">Info about company team</Link> {/* без / это подстраница с / новая */}
+           <Link to="team">Info about company team</Link> {/*без / это подстраница с / новая */}
         </li>
         <li>
           <Link to="reviews">Info about company reviews</Link>
