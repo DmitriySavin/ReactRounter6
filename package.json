@@ -1,7 +1,7 @@
 {
   "name": "reactrouter6",
   "private": true,
-  "homepage" :  "https://github.com/DmitriySavin/ReactRounter6.git",
+  "homepage" :  "https://dmitriysavin.github.io/ReactRounter6/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
