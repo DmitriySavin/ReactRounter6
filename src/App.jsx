@@ -9,6 +9,7 @@ import { Mission } from "./components/Mission";
 import { Reviews } from "./components/Reviews";
 import { Team } from "./components/Team";
 import { ProductDetails } from "./pages/ProductDetails";
+import { SharedLayout } from "./components/SharedLayout";
 
 const StyledLink = styled(NavLink)`
   margin: 10px;
@@ -22,24 +23,28 @@ const StyledLink = styled(NavLink)`
 function App() {
   return (
     <>
-      <nav>
-        <StyledLink to="/">Home</StyledLink>
+      {/* <nav>
+        <StyledLink to="/ReactRounter6/">Home</StyledLink>
         <StyledLink to="/about">About</StyledLink>
         <StyledLink to="/products">Products</StyledLink>
-      </nav>
+      </nav> */}
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        {/* Вложенные маршруты */}
-        <Route path="/about" element={<About />}>
-          <Route path="mission" element={<Mission />} />
-          <Route path="team" element={<Team />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />}/>
+          {/* Вложенные маршруты */}
+          <Route path="/about" element={<About />}>
+            <Route path="mission" element={<Mission />} />
+            <Route path="team" element={<Team />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          {/* end */}
+          <Route path="/products" element={<Product />} />
+          <Route
+            path="/products/:productId"
+            element={<ProductDetails />}/>
+          <Route path="*" element={<NotFound />}/>
         </Route>
-         {/* end */}
-        <Route path="/products" element={<Product />}/>
-         <Route path="/products/:productId" element={<ProductDetails />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
   );

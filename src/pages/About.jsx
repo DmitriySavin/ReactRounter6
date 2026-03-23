@@ -1,6 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export const About = () => {
+  const location = useLocation();
+  console.log(location)
+const data = location.state
+
   return (
     <>
       <h2>AboutUs</h2>
@@ -28,6 +32,9 @@ export const About = () => {
           <Link to="/products">Go to Products</Link>
         </li>
       </ul>
+      <p>UserName: {data?.userName}</p>
+      <p>Age: {data?.age}</p>
+
       <Outlet />
     </>
   );
